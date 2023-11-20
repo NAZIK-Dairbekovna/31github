@@ -16,3 +16,31 @@ var lengthOfLongestSubstring = function(s) {
     }
     return maxLength;
 };
+
+
+// Zigzag conversion
+// /**
+//  * @param {string} s
+//  * @param {number} numRows
+//  * @return {string}
+//  */
+var convert = function(s, numRows) {
+    if(numRows == 1) return s;
+    let n = s.length;
+    let charsInSection = numRows*2-2;
+    let result = '';
+
+    for (let row = 0; row < numRows; row++){
+        let i = row;
+        while (i < n ) {
+            result += s[i]
+            if (row != 0 && row != numRows - 1){
+                let charsInBetween = charsInSection - 2 * row
+                let secondIndex =  i + charsInBetween
+                if (secondIndex < n) result += s[secondIndex]
+            }
+            i += charsInSection
+        }
+    }
+    return result;
+};
