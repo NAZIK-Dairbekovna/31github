@@ -44,7 +44,7 @@ let addTwoNumbers = function(l1, l2) {
 //  // * @return {number}
 //  // */
 
-var myAtoi = function(str) {
+let myAtoi = function(str) {
     let result = 0
     let sign = 1
     let isNonWhiteSpaceMet = false
@@ -82,4 +82,23 @@ var myAtoi = function(str) {
     }
     result *= sign
     return Math.min(Math.max(-(2 ** 31), result), 2**31 - 1)
+};
+
+// 9. Palindrome Number
+// /**
+//  * @param {number} x
+//  * @return {boolean}
+//  */
+var isPalindrome = function(x) {
+    if(x < 0) {
+        return false;
+    }
+
+    let reversed = 0;
+    let current = x;
+    while(current !== 0) {
+        reversed = reversed*10 + current % 10;
+        current = Math.floor(current/10)
+    }
+    return x === reversed;
 };
