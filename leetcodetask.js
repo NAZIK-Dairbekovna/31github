@@ -3,7 +3,6 @@
 //  // * @param {string} str
 //  // * @return {number}
 //  // */
-
 let myAtoi = function(str) {
     let result = 0
     let sign = 1
@@ -94,4 +93,22 @@ var isMatch = function(s, p) {
     }
 
     return check(s, p, 0, 0)
+};
+// 11. Container With Most Water
+// /**
+//  * @param {number[]} height
+//  * @return {number}
+//  */
+var maxArea = function(height) {
+    let area = 0, i=0, j=height.length-1;
+    while(i < j) {
+        const temp = (j-i)*Math.min(height[i], height[j]);
+        area = Math.max(area, temp);
+        if(height[i] > height[j]) {
+            j -= 1
+        } else {
+            i += 1
+        }
+    }
+    return area;
 };
