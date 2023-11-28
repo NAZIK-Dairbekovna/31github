@@ -3,7 +3,7 @@
 //  // * @param {string} str
 //  // * @return {number}
 //  // */
-let myAtoi = function(str) {
+var myAtoi = function(str) {
     let result = 0
     let sign = 1
     let isNonWhiteSpaceMet = false
@@ -94,6 +94,8 @@ var isMatch = function(s, p) {
 
     return check(s, p, 0, 0)
 };
+
+
 // 11. Container With Most Water
 // /**
 //  * @param {number[]} height
