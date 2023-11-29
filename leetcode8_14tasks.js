@@ -1,4 +1,4 @@
-//8. String to Integer (atoi)
+//8. String to Integer (atoi) -Medium
 // /**
 //  // * @param {string} str
 //  // * @return {number}
@@ -43,7 +43,7 @@ var myAtoi = function(str) {
     return Math.min(Math.max(-(2 ** 31), result), 2**31 - 1)
 };
 
-// 9. Palindrome Number
+// 9. Palindrome Number -Easy
 // /**
 //  * @param {number} x
 //  * @return {boolean}
@@ -62,7 +62,7 @@ var isPalindrome = function(x) {
     return x === reversed;
 };
 
-// 10. Regular Expression Matching
+// 10. Regular Expression Matching -Hard
 // /**
 //  * @param {string} s
 //  * @param {string} p
@@ -96,7 +96,7 @@ var isMatch = function(s, p) {
 };
 
 
-// 11. Container With Most Water
+// 11. Container With Most Water -Medium
 // /**
 //  * @param {number[]} height
 //  * @return {number}
@@ -115,7 +115,7 @@ var maxArea = function(height) {
     return area;
 };
 
-// 12. Integer to Roman
+// 12. Integer to Roman -Medium
 const map = new Map([
     [1, 'I'],
     [5, 'V'],
@@ -157,4 +157,42 @@ var intToRoman = function(num) {
         num = (num - last) / 10
     }
     return result.join('')
+};
+
+//13. Roman to Integer -Easy
+/**
+ // * @param {string} s
+ // * @return {number}
+ // */
+var romanToInt = function(s) {
+    let sum = 0;
+
+    for (let i=0; i < s.length; i++) {
+        let prev = s[i-1];
+        switch(s[i]) {
+            case "I":
+                sum += 1;
+                break;
+            case "V":
+                sum = prev === "I" ?   sum + 3 : sum + 5;
+                break;
+            case "X":
+                sum = prev === "I" ?   sum + 8 : sum + 10;
+                break;
+            case "L":
+                sum = prev === "X" ? sum + 30 : sum + 50;
+                break;
+            case "C":
+                sum = prev === "X" ? sum + 80 : sum + 100;
+                break;
+            case "D":
+                sum = prev === "C" ? sum + 300 : sum + 500;
+                break;
+            case "M":
+                sum = prev === "C" ? sum + 800 : sum + 1000;
+                break;
+        }
+    }
+
+    return sum;
 };
