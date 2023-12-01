@@ -199,10 +199,7 @@ var romanToInt = function(s) {
 
 
 // 14. Longest Common Prefix -Easy
-// /**
-//  * @param {string[]} strs
-//  * @return {string}
-//  */
+
 var longestCommonPrefix = function(strs) {
     if (strs.length == 0) {
         return "";
