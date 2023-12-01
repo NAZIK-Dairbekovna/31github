@@ -160,10 +160,10 @@ var intToRoman = function(num) {
 };
 
 //13. Roman to Integer -Easy
-/**
- // * @param {string} s
- // * @return {number}
- // */
+// /**
+//  // * @param {string} s
+//  // * @return {number}
+//  // */
 var romanToInt = function(s) {
     let sum = 0;
 
@@ -195,4 +195,26 @@ var romanToInt = function(s) {
     }
 
     return sum;
+};
+
+
+// 14. Longest Common Prefix -Easy
+// /**
+//  * @param {string[]} strs
+//  * @return {string}
+//  */
+var longestCommonPrefix = function(strs) {
+    if (strs.length == 0) {
+        return "";
+    }
+
+    let prefix = strs[0];
+
+    for (let i = 1; i < strs.length; i++) {
+        while (strs[i].indexOf(prefix) != 0) {
+            prefix = prefix.substring(0, prefix.length-1);
+        }
+    }
+
+    return prefix;
 };
