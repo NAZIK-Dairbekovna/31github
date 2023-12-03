@@ -1,4 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: auto;
+}
 .main_text{
     color: crimson;
     text-align: center;
+    background-color: #b2afaf;
 }
