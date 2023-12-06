@@ -11,3 +11,8 @@
     text-align: center;
     background-color: #b2afaf;
 }
+
+.content-text{
+    color: dimgray;
+    font-size: 12px;
+}
