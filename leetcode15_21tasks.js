@@ -133,3 +133,39 @@ var fourSum = function(nums, target) {
 
     return result
 };
+
+// 19. Remove Nth Node From End of List -Medium
+// /**
+//  * Definition for singly-linked list.
+//  * function ListNode(val, next) {
+//  *     this.val = (val===undefined ? 0 : val)
+//  *     this.next = (next===undefined ? null : next)
+//  * }
+//  */
+// /**
+//  * @param {ListNode} head
+//  * @param {number} n
+//  * @return {ListNode}
+//  */
+var removeNthFromEnd = function(head, n) {
+    let dummyHead = new ListNode(-Infinity);
+    dummyHead.next = head;
+    let resultHead = dummyHead;
+    let count = 0;
+    let tail = head;
+
+    while(count < n) {
+        count++
+        tail = tail.next;
+    }
+    let removeHead = head;
+    let prev = dummyHead;
+    while(tail) {
+        tail = tail.next;
+        removeHead= removeHead.next;
+        prev = prev.next
+    }
+
+    prev.next = removeHead.next;
+    return resultHead.next;
+};
