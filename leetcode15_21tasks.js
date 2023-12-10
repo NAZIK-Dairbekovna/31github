@@ -170,34 +170,8 @@ var removeNthFromEnd = function(head, n) {
     return resultHead.next;
 };
 
-// 20. Valid Parentheses
+// 20. Valid Parentheses -Easy
 
-/**
- * @param {string} s
- * @return {boolean}
- */
-var isValid = function(s) {
-    const stack = [];
-    const parens = '() {} []';
-    let i = 0;
-    while (i < s.length) {
-        stack.push(s[i]);
-        i++;
-
-        let open = stack[stack.length - 2];
-        let closed = stack[stack.length - 1];
-        let potParens = open + closed;
-
-        if (parens.includes(potParens)) {
-            stack.pop();
-            stack.pop();
-        }
-    }
-
-    return stack.length === 0;
-};
-
-// 20. Valid Parentheses
 // /**
 //  * @param {string} s
 //  * @return {boolean}
@@ -221,4 +195,44 @@ var isValid = function(s) {
     }
 
     return stack.length === 0;
+};
+
+
+// 21. Merge Two Sorted Lists -Easy
+// /**
+//  * Definition for singly-linked list.
+//  * function ListNode(val, next) {
+//  *     this.val = (val===undefined ? 0 : val)
+//  *     this.next = (next===undefined ? null : next)
+//  * }
+//  */
+// /**
+//  * @param {ListNode} list1
+//  * @param {ListNode} list2
+//  * @return {ListNode}
+//  */
+var mergeTwoLists = function(list1, list2) {
+    let curr = new ListNode();
+    const dummy = curr;
+    while (list1 && list2) {
+        if (list1.val < list2.val) {
+            curr.next = list1;
+            list1 = list1.next;
+        } else {
+            curr.next = list2;
+            list2 = list2.next;
+        }
+        curr = curr.next;
+    }
+
+    if (list1) {
+        curr.next = list1;
+    }
+
+    if (list2) {
+        curr.next = list2;
+    }
+
+    console.log(JSON.stringify(dummy));
+    return dummy.next;
 };
