@@ -10,9 +10,12 @@
     color: crimson;
     text-align: center;
     background-color: #b2afaf;
+    padding: 10px;
 }
 
 .content-text{
+    text-align: center;
     color: dimgray;
-    font-size: 12px;
+    font-size: 15px;
+    margin: 20px;
 }
