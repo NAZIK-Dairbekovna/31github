@@ -10,12 +10,25 @@
     color: crimson;
     text-align: center;
     background-color: #b2afaf;
-    padding: 10px;
+    padding: 20px;
+    font-size: 40px;
 }
+
+.challenge-text {
+    text-align: center;
+    color: #cbc8c8;
+    font-size: 25px;
+    margin: auto 70px;
+    font-family: 'Dancing Script', cursive;
+    background-color: crimson;
+    border-radius: 25%;
+}
+
 
 .content-text{
     text-align: center;
-    color: dimgray;
-    font-size: 15px;
+    color: #484747;
+    font-size: 25px;
     margin: 20px;
+    font-family: 'Dancing Script', cursive;
 }
