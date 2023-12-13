@@ -4,12 +4,13 @@
     box-sizing: border-box;
 }
 .container{
-    width: auto;
+    width: 90%;
+    margin: 0 auto;
 }
 .main_text{
     color: crimson;
     text-align: center;
-    background-color: #b2afaf;
+    background-color: #cbc5c5;
     padding: 20px;
     font-size: 40px;
 }
@@ -17,18 +18,17 @@
 .challenge-text {
     text-align: center;
     color: #cbc8c8;
-    font-size: 25px;
-    margin: auto 70px;
+    font-size: 30px;
     font-family: 'Dancing Script', cursive;
     background-color: crimson;
-    border-radius: 25%;
+    padding: 20px;
 }
-
 
 .content-text{
     text-align: center;
     color: #484747;
     font-size: 25px;
-    margin: 20px;
+    margin: 20px 0;
     font-family: 'Dancing Script', cursive;
+    padding: 50px;
 }
